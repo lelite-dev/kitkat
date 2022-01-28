@@ -102,5 +102,8 @@
       }
     }
   },
-  "defaultProject": "pulp"
+  "defaultProject": "pulp",
+  "cli": {
+    "defaultCollection": "@ngrx/schematics"
+  }
 }
