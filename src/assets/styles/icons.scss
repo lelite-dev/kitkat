@@ -1,0 +1,15 @@
+$url: './icons/';
+
+@mixin pulp-icon($value: '') {
+  mask-size: cover;
+  -webkit-mask-size: cover;
+  mask-image: url($url + $value);
+  -webkit-mask-image: url($url + $value);
+
+  width: 20px;
+  height: 20px;
+}
+
+.pulp-icon--home {
+  @include pulp-icon('home.svg');
+}

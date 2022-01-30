@@ -1,0 +1,18 @@
+/** Colors **/
+$pulp-color-black: #0a0e12;
+$pulp-color-white: #fff;
+
+$pulp-color-blue: #325ca4;
+$pulp-color-red: #b74c51;
+$pulp-color-green: #8bd389;
+
+
+$pulp-color-grey: (
+    '1': #838383,
+    '2': #656565
+);
+
+/** Mixins **/
+@function color($map-color, $key) {
+  @return map-get($map-color, $key);
+}
