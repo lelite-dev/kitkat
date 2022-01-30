@@ -1,15 +1,24 @@
-$url: './icons/';
+@import "colors";
 
-@mixin pulp-icon($value: '') {
+$url: '../styles/icons/';
+$kitkat-icons: ['add', 'alert', 'arrow-down', 'arrow-left', 'arrow-return', 'arrow-right', 'arrow-up', 'home']; // ... to complete
+
+
+@mixin kitkat-icon($value: '') {
   mask-size: cover;
   -webkit-mask-size: cover;
   mask-image: url($url + $value);
   -webkit-mask-image: url($url + $value);
 
+  display: inline-block;
   width: 20px;
   height: 20px;
+  background-color: color($kitkat-color-grey, '1');
+  margin-right: 5px;
 }
 
-.pulp-icon--home {
-  @include pulp-icon('home.svg');
+@each $icon in $kitkat-icons {
+    .kitkat-icon--#{$icon} {
+      @include kitkat-icon($icon + '.svg');
+    }
 }

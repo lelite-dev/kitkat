@@ -1,10 +1,12 @@
 import {Component} from '@angular/core';
 
 @Component({
-    selector: 'pulp-button',
-    templateUrl: './button.component.html',
-    styleUrls: ['./button.component.scss']
+    selector: 'kitkat-topbar',
+    templateUrl: './topbar.component.html',
+    styleUrls: ['./topbar.component.scss']
 })
-export class ButtonComponent {
+export class TopbarComponent {
+
+    headerTitle = 'Starter Pack';
 
 }

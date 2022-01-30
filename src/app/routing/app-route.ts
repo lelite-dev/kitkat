@@ -1,14 +1,13 @@
 import {Routes} from '@angular/router';
+import {HomeComponent} from '../home/home.component';
 
 export const ROUTES: Routes = [
     {
         path: 'home',
-        component: HomeComponent
+        loadChildren: () => import('./../home/home.module').then(m => m.HomeModule)
     },
     {
-        path: '**',
-        canActivate: [],
-        canActivateChild: [],
+        path: '',
         redirectTo: '',
         pathMatch: 'full'
     }

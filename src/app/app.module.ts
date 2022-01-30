@@ -1,32 +1,25 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
-import { AppComponent } from './app.component';
-import { StoreModule } from '@ngrx/store';
-import { reducers, metaReducers } from './reducers';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
-import { environment } from '../environments/environment';
 import { EffectsModule } from '@ngrx/effects';
-import {RouterModule} from '@angular/router';
-import {ROUTES} from './routing/app-route';
-import { StoreRouterConnectingModule } from '@ngrx/router-store';
-import { HomeComponent } from './home/home.component';
+import { AppComponent } from './app.component';
+import { environment } from '../environments/environment';
+import {AppRouteModule} from './routing/app-route.module';
+import {TopbarModule} from '../components/topbar/topbar.module';
 
 @NgModule({
   declarations: [
-    AppComponent,
-    HomeComponent
+    AppComponent
   ],
-  imports: [
-      BrowserModule,
-      RouterModule.forRoot(ROUTES),
-      StoreModule.forRoot(reducers, {
-        metaReducers
-      }),
-      StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production }),
-      EffectsModule.forRoot([]),
-      StoreRouterConnectingModule.forRoot()
-  ],
+    imports: [
+        BrowserModule,
+        AppRouteModule,
+        StoreDevtoolsModule.instrument({maxAge: 25, logOnly: environment.production}),
+        EffectsModule.forRoot([]),
+
+        /** components **/
+        TopbarModule
+    ],
   providers: [],
   bootstrap: [AppComponent]
 })
